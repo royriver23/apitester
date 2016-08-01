@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :categories do
-    resources :products
-  end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #constraints subdomain: 'api' do
+    scope module: 'api' do
+      namespace :v1 do
+        resources :users
+        resources :categories do
+          resources :products
+        end
+      end
+    end
+  # end
 end
