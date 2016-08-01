@@ -16,6 +16,9 @@ gem 'puma', '~> 3.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Token based authentication for Rails JSON APIs.
+gem 'devise_token_auth'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
@@ -31,6 +34,10 @@ end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'cucumber', require: false
+  gem 'database_cleaner'
+  gem 'mongoid-rspec'
+  gem 'capybara'
 end
 
 group :development do
